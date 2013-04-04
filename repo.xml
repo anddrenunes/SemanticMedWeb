@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>This is a simple demo to show what MLHIM data may look like along with a few queries.  The structure of your application may vary greatly depending on your needs.  MLHIM only specifies the structure of the data.  IT does not specify how your application will be structured or how MLHIM documents will be organized. </description>
+    <author>Timothy W. Cook</author>
+    <website>http://www.mlhim.org</website>
+    <status>alpha</status>
+    <license>GNU-LGPL</license>
+    <copyright>true</copyright>
+    <type>application</type>
+    <target>mlhim-emr</target>
+    <prepare>pre-install.xql</prepare>
+    <finish/>
+    <permissions user="mlhim-admin" password="abc123" group="mlhim" mode="rw-rw-r--"/>
+</meta>

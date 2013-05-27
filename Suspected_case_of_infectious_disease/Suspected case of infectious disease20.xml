@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mlhim2:ccd-208cd2fd-8c68-48d4-87bd-3684ffabd709 xmlns:mlhim2="http://www.mlhim.org/xmlns/mlhim2/2_4_2"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:owl="http://www.w3.org/2002/07/owl#"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:sawsdl="http://www.w3.org/ns/sawsdl"
+ xmlns:sawsdlrdf="http://www.w3.org/ns/sawsdl#"
+ xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.mlhim.org/xmlns/mlhim2/2_4_2 http://hkcr.net/ccd/ccd-208cd2fd-8c68-48d4-87bd-3684ffabd709.xsd">
+  <mlhim2:el-c2ff031f-bcf9-4c09-9bf1-c4a731006c74>
+    <mlhim2:language>en-us</mlhim2:language>
+    <mlhim2:encoding>utf-8</mlhim2:encoding>
+    <mlhim2:el-83cfaa04-2563-43c0-8411-5a3adc7b12b4>
+      <mlhim2:party-name>Self</mlhim2:party-name>
+    </mlhim2:el-83cfaa04-2563-43c0-8411-5a3adc7b12b4>
+    <mlhim2:el-83fc62c8-8df8-472a-b590-d8ecea82d695>
+      <mlhim2:party-name>party-name0</mlhim2:party-name>
+    </mlhim2:el-83fc62c8-8df8-472a-b590-d8ecea82d695>
+    <mlhim2:el-e0787d17-cc12-4383-ac3d-05bd9de42989>
+      <mlhim2:cluster-subject>Suspected case of infectious disease</mlhim2:cluster-subject>
+      <mlhim2:el-d6bcbf57-0cef-43cc-9ae9-39629a011c02>
+        <mlhim2:el-fb37b1ab-1577-4537-881a-c19c2994aa50>
+          <mlhim2:data-name>Intestinal Infectious Diseases</mlhim2:data-name>
+          <mlhim2:DvString-dv>Amoebiasis</mlhim2:DvString-dv>
+          <mlhim2:terminology-abbrev>ICD-10</mlhim2:terminology-abbrev>
+          <mlhim2:terminology-name>International Classification of Diseases - 10th Revision</mlhim2:terminology-name>
+          <mlhim2:terminology-version>2010</mlhim2:terminology-version>
+          <mlhim2:terminology-code>A06</mlhim2:terminology-code>
+        </mlhim2:el-fb37b1ab-1577-4537-881a-c19c2994aa50>
+      </mlhim2:el-d6bcbf57-0cef-43cc-9ae9-39629a011c02>
+      <mlhim2:el-8111d7f0-419c-475a-80dc-8da5e1bdc187>
+        <mlhim2:el-13ba6841-8d08-476a-a70b-dfcbc675686f>
+          <mlhim2:data-name>Tuberculosis</mlhim2:data-name>
+          <mlhim2:DvString-dv> Miliary tuberculosis</mlhim2:DvString-dv>
+          <mlhim2:terminology-abbrev>ICD-10</mlhim2:terminology-abbrev>
+          <mlhim2:terminology-name>International Classification of Diseases - 10th Revision</mlhim2:terminology-name>
+          <mlhim2:terminology-version>2010</mlhim2:terminology-version>
+          <mlhim2:terminology-code>A19</mlhim2:terminology-code>
+        </mlhim2:el-13ba6841-8d08-476a-a70b-dfcbc675686f>
+      </mlhim2:el-8111d7f0-419c-475a-80dc-8da5e1bdc187>
+    </mlhim2:el-e0787d17-cc12-4383-ac3d-05bd9de42989>
+  </mlhim2:el-c2ff031f-bcf9-4c09-9bf1-c4a731006c74>
+</mlhim2:ccd-208cd2fd-8c68-48d4-87bd-3684ffabd709>

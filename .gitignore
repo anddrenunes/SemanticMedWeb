@@ -17,6 +17,8 @@ develop-eggs
 .installed.cfg
 lib
 lib64
+include
+local
 
 # Installer logs
 pip-log.txt
@@ -33,3 +35,19 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+#backup files
+*~
+*.bak
+
+#lock files
+*.lck
+.~lock*
+
+#wingide
+*.wpu
+*.wpr
+
+#oXygen
+*.xpr
+

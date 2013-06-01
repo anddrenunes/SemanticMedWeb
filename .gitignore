@@ -37,6 +37,7 @@ nosetests.xml
 
 #backup files
 *~
+*.bak
 
 #lock files
 *.lck

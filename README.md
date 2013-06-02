@@ -18,7 +18,8 @@ SMW Installation
 ================
 1.  Install eXist-db 2.0 per the instructions for your platform.
 2.  Clone this repository.
-3.  The SemanticMedWeb Demo contains an eXist-db application package that can be imported directly into the database.
+3.  The SemanticMedWeb Demo contains an eXist-db application that can be imported directly into the database using the eXist client.
+    Import the smwdemo subdirectory into your db/apps collection.
 
 _more to come_
  

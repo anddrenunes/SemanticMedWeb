@@ -1,7 +1,8 @@
 What is the SemanticMedWeb?
 ===========================
 The SemanticMedWeb (SMW) is more of a concept than a specific implementation. 
-The concept is based on integration of diverse applications via a mechanism to exchange both the syntactic as well as semantic contexts of any healthcare related concept. 
+The concept is based on integration of diverse applications via a mechanism to exchange both the syntactic as well as semantic contexts of any healthcare related concept.
+From patient data to basic science and back again (bench to beside) semantic interoperability. 
 
 
 SemanticMedWeb Demo 1.0
@@ -19,7 +20,7 @@ SMW Installation
 1.  Install eXist-db 2.0 per the instructions for your platform.
 2.  Clone this repository.
 3.  The SemanticMedWeb Demo contains an eXist-db application that can be imported directly into the database using the eXist client.
-    Import the smwdemo subdirectory into your db/apps collection.
+    Import the smwdemo subdirectory into your db/apps collection. The latest code is in the 1.0 branch.
 
 _more to come_
  

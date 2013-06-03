@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <collection xmlns="http://exist-db.org/collection-config/1.0">
-    <index xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <index xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:mlhim2="http://www.mlhim.org/xmlns/mlhim2/2_4_2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
         <fulltext default="none" attributes="false"/>
+        <lucene>
+            <text qname="dc:description"/>
+            <text qname="dc:title"/>
+            <text qname="dc:subject"/>
+            <text qname="xs:documentation"/>
+            <text qname="mlhim2:DvParsable-dv"/>
+        </lucene>
+        <create qname="mlhim2:DvString-dv" type="xs:string"/>
+        <create qname="mlhim2:data-name" type="xs:string"/>
+        <create qname="mlhim2:cluster-subject" type="xs:string"/>
+        <create qname="dc:date" type="xs:date"/>
+        <create qname="mlhim2:valid-time-begin" type="xs:dateTime"/>
+        <create qname="mlhim2:valid-time-end" type="xs:dateTime"/>
+        <create qname="mlhim2:magnitude" type="xs:decimal"/>
+        <create qname="mlhim2:terminology-code" type="xs:string"/>
+        <create qname="mlhim2:relation" type="xs:string"/>
+        <create qname="mlhim2:terminology-abbrev" type="xs:string"/>
+        <create qname="mlhim2:terminology-abbrev" type="xs:string"/>
+        <create qname="mlhim2:id-name" type="xs:string"/>
+        <create qname="mlhim2:assignor" type="xs:string"/>
+        <create qname="mlhim2:symbol" type="xs:string"/>
+        <create qname="mlhim2:dvtemporal-date" type="xs:date"/>
+        <create qname="mlhim2:dvtemporal-time" type="xs:time"/>
+        <create qname="mlhim2:dvtemporal-datetime" type="xs:dateTime"/>
     </index>
 </collection>

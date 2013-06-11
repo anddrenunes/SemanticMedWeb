@@ -65,16 +65,22 @@ declare function ccdlib:view-ct($node as node(), $model as map(*), $id as xs:str
 let $ccdid := concat('mlhim2-', $id)
 
 (:setup the metadata variables :)
-for $ccd in collection("/db/apps/smwdemo/ccdlib")  
-  for $ctname in $ccd//xs:complexType/data(@name)
-  for $rmtype in $ccd//xs:restriction/data(@base)
+for $ccd in collection("/db/apps/smwdemo/ccdlib")
+  for $ct in $ccd//xs:complexType
+    let $ctname := $ct/data(@name)
+    let $rmtype := $ct//xs:restriction/data(@base)
+    let $doc := $ct//xs:documentation/text()
+    let $semantics := $ct//xs:appinfo/text()
 
 
 where $ccd//@id = $ccdid
   
 return
 <div>
+<p>
 {$ctname}, {$rmtype}<br/>
+{$doc}, {$semantics}
+</p>
 </div>
 
 };

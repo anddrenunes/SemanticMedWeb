@@ -4,6 +4,7 @@ declare namespace mlhim2="http://www.mlhim.org/xmlns/mlhim2/2_4_2";
 declare namespace dc="http://purl.org/dc/elements/1.1/";
 declare namespace rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 
+(: List all of the CCDs in the local library :)
 declare function ccdlib:list($node as node(), $model as map(*)){
 
 let $lib := collection("/db/apps/smwdemo/ccdlib")
@@ -18,27 +19,29 @@ return
   <td><a href="ccdview.html?id={$id}">{$title}</a></td><td>{$descr}</td><td>{$id}</td>
   </tr>
   };
-  
-declare function ccdlib:view($node as node(), $model as map(*), $id as xs:string?){
 
+(:View METADATA from an individual CCD selected from the library listing:)
+declare function ccdlib:view-md($node as node(), $model as map(*), $id as xs:string?){
+
+(: find schema id attribute :)
 let $ccdid := concat('mlhim2-', $id)
-for $ccd in collection("/db/apps/smwdemo/ccdlib")  
-let $title := $ccd//dc:title/text()
-let $dcid := $ccd//dc:identifier/text()
-let $creator := $ccd//dc:creator
-let $contrib := $ccd//dc:contributor/text()
-let $source := $ccd//dc:source/text()
-let $rights := $ccd//dc:rights/text()
-let $relation := $ccd//dc:relation/text()
-let $coverage := $ccd//dc:coverage/text()
-let $language := $ccd//dc:language/text()
-let $publisher := $ccd//dc:publisher/text()
-let $pubdate := $ccd//dc:date/text()
-let $descr := $ccd//dc:description/text()
-let $uri := $ccd/base-uri()
-where $ccd//@id = $ccdid
 
-
+(:setup the metadata variables :)
+for $md in collection("/db/apps/smwdemo/ccdlib")  
+let $title := $md//dc:title/text()
+let $dcid := $md//dc:identifier/text()
+let $creator := $md//dc:creator
+let $contrib := $md//dc:contributor/text()
+let $source := $md//dc:source/text()
+let $rights := $md//dc:rights/text()
+let $relation := $md//dc:relation/text()
+let $coverage := $md//dc:coverage/text()
+let $language := $md//dc:language/text()
+let $publisher := $md//dc:publisher/text()
+let $pubdate := $md//dc:date/text()
+let $descr := $md//dc:description/text()
+let $uri := $md/base-uri()
+where $md//@id = $ccdid
   
 return
 <div>
@@ -51,12 +54,28 @@ Publisher: <b>{$publisher} </b> Date/Time Published: <b>{$pubdate}</b><br/>
 
 <p><b>Description:</b><br/>{$descr}</p>
 Source URI: {$uri}
-<p>
-<b>Structure: </b><br/>
-<div content-type="application/xml">
-<code>{$ccd}</code>
 </div>
-</p>
+
+};
+
+(:View complexType data from an individual CCD selected from the library listing:)
+declare function ccdlib:view-ct($node as node(), $model as map(*), $id as xs:string?){
+
+(: find schema id attribute :)
+let $ccdid := concat('mlhim2-', $id)
+
+(:setup the metadata variables :)
+for $ccd in collection("/db/apps/smwdemo/ccdlib")  
+  for $ctname in $ccd//xs:complexType/data(@name)
+  for $rmtype in $ccd//xs:restriction/data(@base)
+
+
+where $ccd//@id = $ccdid
+  
+return
+<div>
+{$ctname}, {$rmtype}<br/>
 </div>
+
 };
 

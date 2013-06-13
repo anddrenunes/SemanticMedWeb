@@ -35,7 +35,7 @@ SMW Installation
 
 Instance Generator
 ==================
-There is a Python script to create sample instances from your CCDs.  However, as of 4 June, 2013 it is no longer in sync with the SemanticMedWeb Demo.  It will be updated in the comming weeks. 
+There is a Python script to create sample instances from your CCDs.  However, as of 12 June, 2013 it is no longer in sync with the SemanticMedWeb Demo.  It will be updated in the comming weeks. 
 
 
 Concept Constraint Definitions (CCDs)
@@ -49,7 +49,7 @@ Be sure to only use the lastest CCDs (MLHIM version 2.4.2).
 
 
 
-
+v1.0a1 - Provides an HTML view of the CCD types and semantics with clickable links. Add any (2.4.2 or later) CCDs to the 'ccdlib' collection in the demo and select CCD->List All from the menu.  Each CCD title is a clickable link to the CCD View page. 
 
 
 _more to come_

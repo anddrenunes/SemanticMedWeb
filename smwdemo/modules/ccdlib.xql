@@ -44,9 +44,20 @@ let $uri := $md/base-uri()
 where $md//@id = $ccdid
   
 return
-<div>
-Title: <b>{$title} </b> ID: <b>{$dcid}</b><br/>
-Creator: <b>{$creator}</b> Contributors: <b>{$contrib}</b> <br/>
+<div class="meta-data">
+  
+  Title: <b>{$title} </b> ID: <b>{$dcid}</b><br/>
+  Creator: <b>{$creator}</b> <br/>
+  Contributors: <br/>
+
+
+    {
+      for $contrib in $md//dc:contributor
+        return
+        <div><b>{$contrib/text()}</b><br/></div>
+   }
+
+
 Keywords: <b>{$source} </b><br/>
 License: <b>{$rights} </b> Coverage: <b>{$coverage}</b><br/>
 Related To: <b>{$relation} </b> Language: <b>{$language}</b><br/>
@@ -54,8 +65,8 @@ Publisher: <b>{$publisher} </b> Date/Time Published: <b>{$pubdate}</b><br/>
 
 <p><b>Description:</b><br/>{$descr}</p>
 Source URI: {$uri}
-</div>
 
+</div>
 };
 
 (:View complexType data from an individual CCD selected from the library listing:)
@@ -64,22 +75,25 @@ declare function ccdlib:view-ct($node as node(), $model as map(*), $id as xs:str
 (: find schema id attribute :)
 let $ccdid := concat('mlhim2-', $id)
 
-(:setup the metadata variables :)
 for $ccd in collection("/db/apps/smwdemo/ccdlib")
   for $ct in $ccd//xs:complexType
     let $ctname := $ct/data(@name)
-    let $rmtype := $ct//xs:restriction/data(@base)
-    let $doc := $ct//xs:documentation/text()
-    let $semantics := $ct//xs:appinfo/text()
+    let $rmtype := $ct//xs:restriction/data(@base)[1] (: don't include enumeration restrictions :)
+    let $doc := $ct/xs:annotation/xs:documentation/text()
+    let $semantics := $ct/xs:annotation/xs:appinfo/rdf:Description//node()
+    let $name := $ct//xs:sequence/xs:element[1]/data(@fixed)
+    where $ccd//@id = $ccdid
 
-
-where $ccd//@id = $ccdid
-  
 return
 <div>
 <p>
-{$ctname}, {$rmtype}<br/>
-{$doc}, {$semantics}
+Name: <b>{$name}</b>, Type: <b>{$rmtype}</b><br/>
+CT: <b>{$ctname}</b> <br/>
+Documentation: {$doc} <br/>
+Semantic Link: {
+  for $link in $semantics
+  return <a href="{util:unescape-uri($link//data(@*),"UTF-8")}">{util:unescape-uri($link//data(@*),"UTF-8")}</a>
+  }
 </p>
 </div>
 

@@ -5,9 +5,9 @@ declare namespace dc="http://purl.org/dc/elements/1.1/";
 declare namespace rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 
 (: List all of the CCDs in the local library :)
-declare function ccdlib:list($node as node(), $model as map(*)){
+declare function ccdlib:list($node as node(), $model as map(*), $coll as xs:string?){
 
-let $lib := collection("/db/apps/smwdemo/ccdlib")
+let $lib := collection($coll)
 for $ccd in $lib
   let $title := $ccd//dc:title/text()
   let $descr := $ccd//dc:description/text()

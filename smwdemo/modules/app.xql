@@ -1,9 +1,9 @@
 xquery version "3.0";
 
-module namespace app="http://semanticmedweb.com/demo/templates";
+module namespace app="http://www.semanticmedweb.com/demo/templates";
 
 import module namespace templates="http://exist-db.org/xquery/templates" at "templates.xql";
-import module namespace config="http://semanticmedweb.com/demo/config" at "config.xqm";
+import module namespace config="http://www.semanticmedweb.com/demo/config" at "config.xqm";
 
 (:~
  : This is a sample templating function. It will be called by the templating module if

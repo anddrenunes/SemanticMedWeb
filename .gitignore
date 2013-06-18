@@ -19,6 +19,8 @@ lib
 lib64
 include
 local
+smwdemo_original
+
 
 # Installer logs
 pip-log.txt

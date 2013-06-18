@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <meta xmlns="http://exist-db.org/xquery/repo">
-    <description>SemanticMedWeb Demo</description>
-    <author/>
-    <website/>
+    <description>A demo for SemanticMedWeb</description>
+    <author>Timothy W. Cook</author>
+    <website>htttp://www.semantcimedweb.com</website>
     <status>alpha</status>
     <license>GNU-LGPL</license>
     <copyright>true</copyright>
@@ -10,4 +10,5 @@
     <target>smwdemo</target>
     <prepare>pre-install.xql</prepare>
     <finish/>
+    <permissions user="admin" password="abc123" group="dba" mode="rw-rw-r--"/>
 </meta>

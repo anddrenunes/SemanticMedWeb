@@ -1,5 +1,5 @@
 xquery version "3.0";
-module namespace emrdata="http://semanticmedweb.com/demo/emrdata";
+module namespace emrdata="http://www.semanticmedweb.com/demo/emrdata";
 declare namespace mlhim2="http://www.mlhim.org/xmlns/mlhim2/2_4_2";
 declare namespace dc="http://purl.org/dc/elements/1.1/";
 declare namespace rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#";
@@ -12,7 +12,7 @@ declare function functx:leaf-elements ($root as node()?) as element()* {
 (: List all of the EMR Data :)
 declare function emrdata:list-all($node as node(), $model as map(*)){
 
-let $data := collection("/db/apps/smwdemo/data/emr")
+let $data := collection("/db/apps/smwdemo/data/emr/care")
 for $instance in $data
   let $subject := $instance//mlhim2:cluster-subject[1]/text()
   let $path := document-uri($instance)

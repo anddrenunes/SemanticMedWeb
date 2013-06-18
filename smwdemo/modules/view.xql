@@ -11,14 +11,14 @@ import module namespace templates="http://exist-db.org/xquery/templates" at "tem
  : The following modules provide functions which will be called by the 
  : templating.
  :)
-import module namespace config="http://semanticmedweb.com/demo/config" at "config.xqm";
-import module namespace app="http://semanticmedweb.com/demo/templates" at "app.xql";
+import module namespace config="http://www.semanticmedweb.com/demo/config" at "config.xqm";
+import module namespace app="http://www.semanticmedweb.com/demo/templates" at "app.xql";
 
 (: 
  : The following modules provide functions which are defined for SemanticMedWeb.
  :)
-import module namespace ccdlib="http://semanticmedweb.com/demo/ccdlib" at "ccdlib.xql";
-import module namespace emrdata="http://semanticmedweb.com/demo/emrdata" at "emrdata.xql";
+import module namespace ccdlib="http://www.semanticmedweb.com/demo/ccdlib" at "ccdlib.xql";
+import module namespace emrdata="http://www.semanticmedweb.com/demo/emrdata" at "emrdata.xql";
 
 declare option exist:serialize "method=html5 media-type=text/html enforce-xhtml=yes";
 
